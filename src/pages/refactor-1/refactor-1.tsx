@@ -14,7 +14,7 @@ interface ButtonProps {
   setSelectedButton: (value: ButtonType) => void;
 }
 
-// ✓ TODO is it possible to improve this component's interface (props)?
+//  TODO is it possible to improve this component's interface (props)?
 const Button = ({ button, selectedButton, setSelectedButton }: ButtonProps) => {
   const style = button === selectedButton;
   return (
