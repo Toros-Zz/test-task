@@ -2,10 +2,11 @@ import clsx from 'clsx';
 import { useState } from 'react';
 import { CenteredLayout } from '~/components';
 
-// TODO is there a way to not write this twice? =\
-type ButtonType = 'fast' | 'quality' | 'cheap';
+// ✓ TODO is there a way to not write this twice? =\
 
-const buttons: ButtonType[] = ['fast', 'quality', 'cheap'];
+const buttons = ['fast', 'quality', 'cheap'] as const;
+
+type ButtonType = typeof buttons[number];
 
 interface ButtonProps {
   button: ButtonType;
@@ -13,7 +14,7 @@ interface ButtonProps {
   setSelectedButton: (value: ButtonType) => void;
 }
 
-// TODO is it possible to improve this component's interface (props)?
+// ✓ TODO is it possible to improve this component's interface (props)?
 const Button = ({ button, selectedButton, setSelectedButton }: ButtonProps) => {
   const style = button === selectedButton;
   return (
